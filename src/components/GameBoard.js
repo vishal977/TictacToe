@@ -55,6 +55,7 @@ export default function GameBoard() {
             set.add(game[0][idx].concat(game[1][idx]).concat(game[2][idx]))
         }
         set.add(game[0][0].concat(game[1][1]).concat(game[2][2]))
+        set.add(game[0][2].concat(game[1][1]).concat(game[2][0]))
 
         if (currentPlayer === 'X' && set.has(`XXX`)) {
             declareWinner(`X`)
