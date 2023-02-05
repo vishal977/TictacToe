@@ -77,18 +77,13 @@ export default function GameBoard() {
                 <h4>{result}</h4>
             </div>
             <div className={gameboardClass} >
-
-                <div className="box" onClick={processClick} id="0">{game[0][0]}</div>
-                <div className="box" onClick={processClick} id="1">{game[0][1]}</div>
-                <div className="box" onClick={processClick} id="2">{game[0][2]}</div>
-
-                <div className="box" onClick={processClick} id="10">{game[1][0]}</div>
-                <div className="box" onClick={processClick} id="11">{game[1][1]}</div>
-                <div className="box" onClick={processClick} id="12">{game[1][2]}</div>
-
-                <div className="box" onClick={processClick} id="20">{game[2][0]}</div>
-                <div className="box" onClick={processClick} id="21">{game[2][1]}</div>
-                <div className="box" onClick={processClick} id="22">{game[2][2]}</div>
+                {
+                    game.map((row, rowIndex) => {
+                        return row.map((col, colIndex) => {
+                            return <div className="box" onClick={ processClick } id = { "" + rowIndex +colIndex }>{col}</div>
+                        })
+                    })
+                }
 
             </div>
             <button className="bn54" onClick={() => resetGame()}>
