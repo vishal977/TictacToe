@@ -65,7 +65,7 @@ export default function GameBoard() {
 
     }
 
-    function resetGame() {
+    const resetGame = () => {
         setGame([["", "", ""], ["", "", ""], ["", "", ""]])
         setResult("")
         setGameboardClass(Constants.GAMEBOARD_ENABLED)
